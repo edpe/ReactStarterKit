@@ -1,0 +1,40 @@
+Installation instructions in readme
+
+Presentation sections:
+  Personal Introduction
+  Objectives for the workshop
+  Why React?
+    History
+	Popularity
+	Conceptual Model
+      Component tree
+      Rendering and re-rendering
+      The virtual DOM
+
+  Combatting Javascript Fatigue with CRA
+    Complexity and Modernity
+    Get set up (PRACTICAL)
+     - github fork
+     - git clone
+     - nvm
+     - CRA
+     - npm start
+    (optional: Deploying with CRA/GHPages - an npm script...)
+
+  Components
+    "Hello World" (PRACTICAL)
+    JSX
+      Separation of concerns
+      JSX Primer
+    Thinking in Components
+      Introduce Loomap-Cluj - sketch and data
+      What do we need? (WHITEBOARD)
+      
+  Props
+    Supplying data to components
+
+
+  State
+  Lifecycle
+
+  Testing
