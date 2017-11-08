@@ -17,7 +17,8 @@ Presentation sections:
      - github fork
      - git clone
      - nvm
-     - CRA
+     - npm install -g create-react-app
+     - create-react-app loomap-cluj
      - npm start
     (optional: Deploying with CRA/GHPages - an npm script...)
 
@@ -29,7 +30,7 @@ Presentation sections:
     Thinking in Components
       Introduce Loomap-Cluj - sketch and data
       What do we need? (WHITEBOARD)
-      
+
   Props
     Supplying data to components
 
