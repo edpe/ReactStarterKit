@@ -3,8 +3,8 @@ import React from 'react';
 const Nav = (props) => {
   return (
     <nav>
-      <button>List</button>
-      <button>Map</button>
+      <button onClick={props.showList}>List</button>
+      <button onClick={props.showMap}>Map</button>
     </nav>
   );
 }
