@@ -8,8 +8,6 @@ Presentation sections:
     * shortcut some of the parts which can be frustrating
 
   Why React?
-    History
-	Popularity
 	Conceptual Model
       Component tree
       Rendering and re-rendering
@@ -84,6 +82,10 @@ Presentation sections:
     Enzyme (optional but recommended)
     Snapshots
     coverage
+
+  Form Inputs
+    Controlled and Uncontrolled
+    Make a filter on name
 
   prop-types
     - yarn add prop-types
