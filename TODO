@@ -13,17 +13,16 @@ Presentation sections:
       Rendering and re-rendering
       The virtual DOM
 
+  A Minimal Component
+
   Combatting Javascript Fatigue with CRA
     Complexity and Modernity
     Get set up (PRACTICAL)
-     - github fork
-     - git clone
      - nvm
      - npm install -g create-react-app
      - create-react-app loomap-cluj
      - cd loomap-cluj
      - yarn start
-    (optional: Deploying with CRA/GHPages - an npm script...)
     Strip out the examples
 
   Components

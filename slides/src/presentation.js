@@ -19,21 +19,30 @@ import {
 } from 'spectacle';
 
 import CodeSlide from 'spectacle-code-slide';
+import Terminal from "spectacle-terminal";
+import Typist from "react-typist";
+import Loading from "react-loading";
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
 
 // Images
-import reactLogo from './assets/img/react-logo-1000-transparent.png';
+import reactLogo from './assets/img/react.png';
 import reactTree from './assets/img/tree.png';
 import champagneTower from './assets/img/champagne.gif';
+import vDom from './assets/img/vdom.png';
+import allthethings from './assets/img/installallthethings.jpg';
+import separation from './assets/img/separationofconcerns.png';
+import paperloo from './assets/img/paperloo.jpg';
 
 
 // Require CSS
 require('normalize.css');
 
 const theme = createTheme();
-const sln = false;
+const sln = true;
+const cursor = { show: true, blink: true, element: "|", hideWhenDone: true, hideWhenDoneDelay: 500 };
+
 
 export default class Presentation extends React.Component {
   render() {
@@ -94,11 +103,6 @@ export default class Presentation extends React.Component {
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
             An up-to-date Node installation (ideally via "nvm")
           </Text>
-        </Slide>
-        <Slide transition={[]} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Why React?
-          </Heading>
         </Slide>
         <Slide transition={[]} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
@@ -181,38 +185,159 @@ export default class Presentation extends React.Component {
             * only with very deterministic champagne
             </Text>
           </Slide>
+          <Slide bgColor="secondary">
+            <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
+              React's Conceptual Model
+            </Heading>
+            <BlockQuote>
+              <Quote>A composition of pure functions which returns a UI state for a given set of input data</Quote>
+            </BlockQuote>
+          </Slide>
         </Magic>
-
-
-
-
-
-
-
-
+        <Slide bgColor="primary">
+          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+              Wait!
+          </Heading>
+          <Appear>
+            <Text>What about performance?</Text>
+          </Appear>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Heading size={3} caps lineHeight={1} textColor="primary">
+              The Virtual DOM
+          </Heading>
+          <Image src={vDom} width="80%" height="80%"/>
+          <Appear>
+            <Text textColor="tertiary">The diff generates a list of DOM mutations like a version control system outputs text mutations</Text></Appear>
+        </Slide>
         <CodeSlide
             showLineNumbers={sln}
             transition={[]}
             lang="js"
-            code={require("./assets/code/code.example.js").default}
+            code={require("./assets/code/HelloWorld.example.js").default}
             ranges={[
-              { loc: [0, 11], title: "A Function Component" },
-              { loc: [0, 1], note: "ceremony - makes JSX work" },
-              { loc: [2, 5] },
+              { loc: [0, 7], title: "HelloWorld.js" },
+              { loc: [0, 1], note: "ES6 import ceremony" },
+              { loc: [2, 5], note: "A simple 'fat arrow' function"},
+              { loc: [6, 7], note: "Make it the default export"},
               { loc: [3, 4], note: "Spooky JSX part" },
-              { loc: [10, 11], note: "Make it the default export"}
             ]}/>
-
-        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Standard List
+          <Slide transition={['slide']} bgColor="primary" textColor="secondary">
+          <Heading size={3} fit lineHeight={1} textColor="secondary">
+              Some Complications
           </Heading>
           <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
+            <ListItem>Javascript from the future</ListItem>
+            <ListItem>Which browsers can't even run yet</ListItem>
+            <ListItem>Some of it isn't even Javascript</ListItem>
+            <ListItem>NPM, Webpack, Babel, ES6/7</ListItem>
+            <ListItem>I can't even...</ListItem>
           </List>
+        </Slide>
+        <Slide transition={[]} bgColor="primary">
+          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+              Fatigued Already?
+          </Heading>
+          <Image src={allthethings} width="70%" height="70%"/>
+        </Slide>
+        <Slide transition={['slide']} bgColor="secondary">
+          <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
+            Create-React-App
+          </Heading>
+          <Text margin="10px 0 0" textColor="primary" size={1} fit bold>
+            is here to save us
+          </Text>
+        </Slide>
+        <Slide bgColor="primary">
+          <Heading size={2} caps fit textColor="tertiary">Let's get started</Heading>
+          <Terminal title="rupert@quixote: ~/public_html/ReactStarterKit" output={[
+              <Typist cursor={ cursor }>nvm install 9</Typist>,
+              [
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Loading type="bars" color="#fff" height="30" width="30" />
+                </div>,
+                <div style={{ color: "#33B969"}}>Checksums empty<br/>Now using node v9.1.0 (npm v5.5.1)</div>
+              ],
+              <Typist cursor={ cursor }>npm install -g create-react-app</Typist>,
+              [
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Loading type="bars" color="#fff" height="30" width="30" />
+                </div>,
+                <div style={{ color: "#33B969"}}>/home/rupert/.nvm/versions/node/v9.1.0/bin/create-react-app -> /home/rupert/.nvm/versions/node/v9.1.0/lib/node_modules/create-react-app/index.js<br/>+ create-react-app@1.4.3<br/>added 106 packages in 7s</div>
+              ],
+              <Typist cursor={ cursor }>create-react-app workshop</Typist>,
+              [
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Loading type="bars" color="#fff" height="30" width="30" />
+                </div>,
+                <div style={{ color: "#33B969"}}>Success! Created workshop at /home/rupert/tmp/test/workshop<br/>...<br/>We suggest that you begin by typing:<br/><br/>cd workshop<br/>yarn start</div>
+              ],
+            ]} />
+        </Slide>
+        <Slide transition={['slide']} bgColor="secondary" textColor="tertiary">
+          <Heading size={3} textColor="tertiary">A Little Cleanup</Heading>
+          <List ordered>
+            <ListItem>delete <em style={{ color: "#33B969"}}>src/index.css</em> and remove its import from <em style={{ color: "#33B969"}}>src/index.js</em></ListItem>
+            <ListItem>delete <em style={{ color: "#33B969"}}>src/App.css</em> and remove its import from <em style={{ color: "#33B969"}}>src/App.js</em></ListItem>
+            <ListItem>delete <em style={{ color: "#33B969"}}>src/logo.svg</em> and remove its import from <em style={{ color: "#33B969"}}>src/App.js</em></ListItem>
+            <ListItem>delete the return statement (lines 5 to 15) from <em style={{ color: "#33B969"}}>src/App.js</em></ListItem>
+            <ListItem>make line 5 of <em style={{ color: "#33B969"}}>src/App.js</em> read <strong style={{ color: "#f9c300"}}>return null;</strong></ListItem>
+          </List>
+          <Appear>
+            <Text textColor="tertiary">Gratz! You've made an empty webpage!</Text>
+          </Appear>
+        </Slide>
+        <CodeSlide
+          showLineNumbers={sln}
+          transition={[]}
+          lang="js"
+          code={require("./assets/code/HelloWorld.example.js").default}
+          ranges={[
+            { loc: [0, 7], title: "HelloWorld.js" },
+          ]}/>
+        <CodeSlide
+            showLineNumbers={sln}
+            transition={[]}
+            lang="js"
+            code={require("./assets/code/HelloWorldApp.example.js").default}
+            ranges={[
+              { loc: [0, 0], title: "App.js" },
+              { loc: [1, 2], note: "Import your new component" },
+              { loc: [5, 6], note: "Create an instance of your component in JSX and return it"},
+              { loc: [0, 10] },
+            ]}/>
+          <CodeSlide
+            showLineNumbers={sln}
+            transition={[]}
+            lang="js"
+            code={require("./assets/code/jsx.example.js").default}
+            ranges={[
+              { loc: [0, 1], title: "JSX" },
+              { loc: [2, 4], note: "Use curlies to embed any Javascript expression" },
+              { loc: [5, 7], note: "You can do what you like in there..." },
+              { loc: [8, 13] },
+              { loc: [11, 12], note: "Some tag attributes are differently named!" },
+              { loc: [10, 11], note: "Most often they are camel-cased versions of the ones you know" },
+              { loc: [14, 22]},
+              { loc: [15, 22], note: "Be careful to wrap multi-line JSX expressions in parentheses"},
+              { loc: [23, 34]},
+            ]}/>
+        <Slide transition={[]} bgColor="secondary">
+          <Heading size={3} fit textColor="tertiary">
+            This makes people nervous
+          </Heading>
+          <Appear>
+            <Image src={separation} width="80%" height="80%" />
+          </Appear>
+        </Slide>
+        <Slide transition={[]} bgColor="secondary">
+          <Heading size={3} fit textColor="primary">
+            Thinking in Components
+          </Heading>
+          <Image src={paperloo} width="70%" height="70%" />
+          <Text size={6} fit textColor="tertiary">
+            * carefully-scoped shovel-ready spec ;-)
+          </Text>
         </Slide>
 
       </Deck>
