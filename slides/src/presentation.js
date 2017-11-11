@@ -339,6 +339,52 @@ export default class Presentation extends React.Component {
             * carefully-scoped shovel-ready spec ;-)
           </Text>
         </Slide>
+        <CodeSlide
+            showLineNumbers={sln}
+            transition={[]}
+            lang="json"
+            code={require("./assets/code/cluj.data.js").default}
+            ranges={[
+              { loc: [0, 0], title: "Loo Data" },
+              { loc: [0, 3], note: "geoJson Wrapper (data.features is an array of loos)" },
+              { loc: [18, 33] },
+              { loc: [21, 22], note: "loo.properties.name" },
+              { loc: [23, 30], note: "geoJson Point (wgs84) loo.geometry.coordinates" },
+            ]}/>
+          <Slide transition={[]} bgColor="secondary">
+            <Heading size={3} fit textColor="primary">
+              All about "props"
+            </Heading>
+            <Text size={6} fit textColor="tertiary">
+              how to pass data to components
+            </Text>
+          </Slide>
+          <CodeSlide
+            showLineNumbers={sln}
+            transition={[]}
+            lang="js"
+            code={require("./assets/code/props.example.js").default}
+            ranges={[
+              { loc: [0, 0], title: "Props!" },
+              { loc: [0, 1], note: "A component function receives 'props' as its first argument" },
+              { loc: [2, 3], note: "'props' is a read-only object!" },
+              { loc: [6, 7], note: "'props' is populated by the attributes applied to the component in JSX" },
+              { loc: [12, 15], note: "Setting default props" },
+              { loc: [20, 24], note: "Input validation with the prop-types package" },
+            ]}/>
+          <Slide transition={[]} bgColor="primary">
+            <Heading size={3} fit textColor="secondary">
+              LooMap mission 1
+            </Heading>
+            <List>
+              <ListItem>Replace HelloWorld with a Loo component which can show a loo's name</ListItem>
+              <ListItem>Copy the fixture from 'https://github.com/neontribe/ReactStarterKit'</ListItem>
+              <ListItem>Import it in App.js</ListItem>
+              <ListItem>Supply the first item from the array as data to your component</ListItem>
+              <ListItem>Build a LooList component which can accept an array of data and render a list of Loo components</ListItem>
+            </List>
+          </Slide>
+
 
       </Deck>
     );
