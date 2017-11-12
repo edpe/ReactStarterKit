@@ -86,10 +86,3 @@ Presentation sections:
   Form Inputs
     Controlled and Uncontrolled
     Make a filter on name
-
-  prop-types
-    - yarn add prop-types
-    What is this for?
-    Attatching prop-type definitions to a component
-    (defaultProps)
-    Dev only

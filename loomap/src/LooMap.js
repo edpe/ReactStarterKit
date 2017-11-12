@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Map, TileLayer, GeoJSON } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-
 import L from 'leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
@@ -9,19 +9,39 @@ let DefaultIcon = L.icon({
     iconUrl: icon,
     shadowUrl: iconShadow
 });
-L.Marker.prototype.options.icon = DefaultIcon;
 
+L.Marker.prototype.options.icon = DefaultIcon;
 
 const LooMap = (props) => {
   return (
-      <Map center={[46.76, 23.59]} zoom="13" style={{height: '600px', width: '500px'}}>
+      <Map
+        center={props.center}
+        zoom={props.zoom}
+        style={{height: props.height}}
+        scrollWheelZoom={!props.fixed}
+        keyboard={!props.fixed}
+        touchZoom={!props.fixed}
+        dragging={!props.fixed}
+        zoomControl={!props.fixed}>
         <TileLayer
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          attribution='&copy; OpenStreetMap'
         />
-        <GeoJSON data={props.loos} />
+        <GeoJSON data={props.geojson} />
       </Map>
   );
+}
+
+LooMap.defaultProps = {
+  zoom: 13,
+  height: '600px',
+  fixed: false,
+};
+
+LooMap.propTypes = {
+  center: PropTypes.array.isRequired,
+  geojson: PropTypes.object.isRequired,
+  zoom: PropTypes.number,
 }
 
 export default LooMap;

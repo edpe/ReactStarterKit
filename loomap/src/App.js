@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import data from './cluj.json';
 import Nav from './Nav';
 import LooList from './LooList';
@@ -28,7 +29,12 @@ class App extends Component {
         {this.state.show === 'list' ?
           <LooList loos={data.features} />
           :
-          <LooMap loos={data.features} />
+          <LooMap
+            center={[46.76, 23.59]}
+            zoom={13}
+            geojson={data}
+            height="600px"
+            />
         }
       </div>
     );

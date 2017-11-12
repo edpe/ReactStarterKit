@@ -3,6 +3,7 @@ import React from 'react';
 
 // Import Spectacle Core tags
 import {
+  CodePane,
   BlockQuote,
   Cite,
   Deck,
@@ -377,7 +378,7 @@ export default class Presentation extends React.Component {
               LooMap
             </Heading>
             <Heading size={4} textColor="tertiary">
-              mission one
+              the list mission
             </Heading>
             <List ordered>
               <ListItem>Copy the fixture from <Link href="https://git.io/vFrJv">https://git.io/vFrJv</Link></ListItem>
@@ -385,8 +386,84 @@ export default class Presentation extends React.Component {
               <ListItem>Build a <strong style={{ color: "#33B969"}}>Loo</strong> component for displaying individual loos</ListItem>
               <ListItem>Build a <strong style={{ color: "#33B969"}}>LooList</strong> which renders a list of <strong style={{ color: "#33B969"}}>Loo</strong>s </ListItem>
               <ListItem>Render a <strong style={{ color: "#33B969"}}>LooList</strong> in <strong style={{ color: "#33B969"}}>App.js</strong> and connect it to the fixture data</ListItem>
-          </List>
+            </List>
           </Slide>
+          <Slide bgColor="secondary">
+            <Heading size={1} fit textColor="primary">
+              3rd Party Libraries
+            </Heading>
+            <Heading size={4} fit textColor="tertiary">
+              making a map with <Link href="https://github.com/PaulLeCam/react-leaflet">react-leaflet</Link>
+            </Heading>
+          </Slide>
+          <Slide bgColor="primary">
+            <Heading size={2} caps fit textColor="tertiary">Install react-leaflet</Heading>
+            <Terminal title="rupert@quixote: ~/public_html/ReactStarterKit/loomap" output={[
+                <Typist cursor={ cursor }>yarn add leaflet react-leaflet prop-types</Typist>,
+                [
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <Loading type="bars" color="#fff" height="30" width="30" />
+                  </div>,
+                  <div>
+                    <span style={{ color: "#33B969"}}>success</span> Saved lockfile.<br/>
+                    <span style={{ color: "#33B969"}}>success</span> Saved 3 new dependencies.<br/>
+                    ├─ leaflet@1.2.0<br/>
+                    ├─ prop-types@15.6.0<br/>
+                    └─ react-leaflet@1.7.4<br/>
+                    Done in 4.75s.
+                  </div>
+                ],
+              ]} />
+          </Slide>
+          <CodeSlide
+            showLineNumbers={sln}
+            transition={[]}
+            lang="js"
+            code={require("./assets/code/LooMap.example.js").default}
+            ranges={[
+              { loc: [0, 0], title: "LooMap.js" },
+              { loc: [0, 7] },
+              { loc: [8, 10] },
+              { loc: [11, 25] },
+              { loc: [13, 23] },
+              { loc: [17, 21] },
+              { loc: [21, 22] },
+            ]}/>
+          <Slide>
+            <CodePane
+              textSize="16"
+              lang="javascript"
+              source={require("./assets/code/LooMap.example.js").default}
+            />
+          </Slide>
+          <CodeSlide
+            showLineNumbers={sln}
+            transition={[]}
+            lang="js"
+            code={require("./assets/code/setupLeaflet.example.js").default}
+            ranges={[
+              { loc: [0, 8], title: "Fixing the marker issue" },
+              { loc: [0, 8], note: "Add these lines to LooMap.js" }
+            ]}/>
+          <Slide>
+            <Heading size={3} textColor="secondary">
+              LooMap
+            </Heading>
+            <Heading size={4} textColor="tertiary">
+              the mini-map mission
+            </Heading>
+            <List ordered>
+              <ListItem>Add a nice mini-map to each <strong style={{ color: "#33B969"}}>Loo</strong> in the <strong style={{ color: "#33B969"}}>LooList</strong></ListItem>
+              <ListItem>Refactor <strong style={{ color: "#33B969"}}>LooMap</strong> so that it can be used in both views</ListItem>
+              <ListItem><em>(stretch)</em> Find a way to disable pan and zoom on the mini-maps</ListItem>
+              <ListItem><em>(stretch)</em> Set some defaultProps to <strong style={{ color: "#33B969"}}>LooMap</strong></ListItem>
+              <ListItem><em>(stretch)</em> Use prop-types to validate the inputs to <strong style={{ color: "#33B969"}}>LooMap</strong></ListItem>
+            </List>
+            <Heading size={6} fit textColor="secondary">
+              * Put your hand in the air when you make a map of a desert by mistake
+            </Heading>
+          </Slide>
+
 
 
       </Deck>
