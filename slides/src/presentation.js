@@ -463,6 +463,26 @@ export default class Presentation extends React.Component {
               * Put your hand in the air when you make a map of a desert by mistake
             </Heading>
           </Slide>
+          <Slide bgColor="primary">
+            <Heading size={1} fit textColor="secondary">
+              Stateful components
+            </Heading>
+            <Heading size={2} fit textColor="tertiary">
+              how to switch between views?
+            </Heading>
+          </Slide>
+          <CodeSlide
+            showLineNumbers={sln}
+            transition={[]}
+            lang="js"
+            code={require("./assets/code/App.example.js").default}
+            ranges={[
+              { loc: [2, 3], title: "A Stateful Component" },
+              { loc: [4, 10] },
+              { loc: [12, 13], note: "Hey, show them the dev tools! (state-demo app)" },
+
+            ]}/>
+
 
 
 
