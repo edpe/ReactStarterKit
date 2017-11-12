@@ -1,34 +1,36 @@
 Installation instructions in readme
 
 Presentation sections:
-  Personal Introduction
   Objectives for the workshop
+    * build a simple and useful app
+    * stick to "plain" react
+    * cover the breadth of react's API
+    * shortcut some of the parts which can be frustrating
+
   Why React?
-    History
-	Popularity
 	Conceptual Model
       Component tree
       Rendering and re-rendering
       The virtual DOM
 
+  A Minimal Component
+
   Combatting Javascript Fatigue with CRA
     Complexity and Modernity
     Get set up (PRACTICAL)
-     - github fork
-     - git clone
      - nvm
      - npm install -g create-react-app
      - create-react-app loomap-cluj
      - cd loomap-cluj
      - yarn start
-    (optional: Deploying with CRA/GHPages - an npm script...)
     Strip out the examples
 
   Components
     "Hello World" (PRACTICAL)
     JSX
-      Separation of concerns
       JSX Primer
+      Separation of concerns
+
     Thinking in Components
       Introduce Loomap-Cluj - sketch and data
       What do we need? (WHITEBOARD)
@@ -55,8 +57,39 @@ Presentation sections:
       Is it state?
       Initializing state
       conditional rendering based on state
+      - install React devTools extension
       setState
-    
+      - Build a separate nav component
+      - wire the two together (functions as props and onClick!)
+
   Lifecycle
+    How to collect live data from the server?
+    The second major feature of class-based React components is that they implement the "Lifecycle methods"
+    https://reactjs.org/docs/react-component.html
+    These can seem daunting at first:
+        - you can set initial state in constructor()
+        - you'll always implement render()
+        - data fetching is best done in componentDidMount()
+        - componentDidCatch() (new in React 16 - powerful error handling)
+        - the rest you can leave for another day (Direct DOM manipulation, performance management etc.)
+    Implementing componentDidMount() (PRACTICAL)
+        - https://gbptm-ui.herokuapp.com/loos/near/23.592/46.769
+
 
   Testing
+    - yarn add enzyme enzyme-adapter-react-16 enzyme-to-json
+    Jest
+    Enzyme (optional but recommended)
+    Snapshots
+    coverage
+
+  Form Inputs
+    Controlled and Uncontrolled
+    Make a filter on name
+
+  prop-types
+    - yarn add prop-types
+    What is this for?
+    Attatching prop-type definitions to a component
+    (defaultProps)
+    Dev only
