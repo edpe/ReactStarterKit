@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, Marker, TileLayer } from 'react-leaflet';
+import { Map, TileLayer, GeoJSON } from 'react-leaflet';
 
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -22,7 +22,7 @@ const Loo = (props) => {
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        <Marker position={coords} />
+        <GeoJSON data={props.loo} />
       </Map>
     </div>
   );

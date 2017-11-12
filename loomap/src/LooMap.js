@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, Marker, TileLayer } from 'react-leaflet';
+import { Map, TileLayer, GeoJSON } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 import L from 'leaflet';
@@ -13,18 +13,13 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 
 const LooMap = (props) => {
-  let lcods = props.loos.map(loo => loo.geometry.coordinates.slice(0).reverse());
-  let bounds = new L.LatLngBounds(lcods);
   return (
-      <Map bounds={bounds} style={{height: '600px', width: '500px'}}>
+      <Map center={[46.76, 23.59]} zoom="13" style={{height: '600px', width: '500px'}}>
         <TileLayer
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        {props.loos.map((loo) => {
-          let coords = loo.geometry.coordinates.slice(0).reverse();
-          return <Marker position={coords} key={loo._id} />;
-        })}
+        <GeoJSON data={props.loos} />
       </Map>
   );
 }
