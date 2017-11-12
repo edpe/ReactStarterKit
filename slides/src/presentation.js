@@ -373,16 +373,19 @@ export default class Presentation extends React.Component {
               { loc: [20, 24], note: "Input validation with the prop-types package" },
             ]}/>
           <Slide transition={[]} bgColor="primary">
-            <Heading size={3} fit textColor="secondary">
-              LooMap mission 1
+            <Heading size={3} textColor="secondary">
+              LooMap
             </Heading>
-            <List>
-              <ListItem>Replace HelloWorld with a Loo component which can show a loo's name</ListItem>
-              <ListItem>Copy the fixture from 'https://github.com/neontribe/ReactStarterKit'</ListItem>
-              <ListItem>Import it in App.js</ListItem>
-              <ListItem>Supply the first item from the array as data to your component</ListItem>
-              <ListItem>Build a LooList component which can accept an array of data and render a list of Loo components</ListItem>
-            </List>
+            <Heading size={4} textColor="tertiary">
+              mission one
+            </Heading>
+            <List ordered>
+              <ListItem>Copy the fixture from <Link href="https://git.io/vFrJv">https://git.io/vFrJv</Link></ListItem>
+              <ListItem>Import it in <strong style={{ color: "#33B969"}}>App.js</strong></ListItem>
+              <ListItem>Build a <strong style={{ color: "#33B969"}}>Loo</strong> component for displaying individual loos</ListItem>
+              <ListItem>Build a <strong style={{ color: "#33B969"}}>LooList</strong> which renders a list of <strong style={{ color: "#33B969"}}>Loo</strong>s </ListItem>
+              <ListItem>Render a <strong style={{ color: "#33B969"}}>LooList</strong> in <strong style={{ color: "#33B969"}}>App.js</strong> and connect it to the fixture data</ListItem>
+          </List>
           </Slide>
 
 
