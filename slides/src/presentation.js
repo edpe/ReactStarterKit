@@ -36,6 +36,7 @@ import vDom from './assets/img/vdom.png';
 import allthethings from './assets/img/installallthethings.jpg';
 import separation from './assets/img/separationofconcerns.png';
 import paperloo from './assets/img/paperloo.jpg';
+import contactForm from './assets/img/contactform.png';
 
 
 // Require CSS
@@ -670,6 +671,9 @@ export default class Presentation extends React.Component {
               <ListItem>Avoid state management libraries when starting out</ListItem>
               <ListItem>The docs at <Link href="https://reactjs.org/">reactjs.org</Link> are increasingly excellent</ListItem>
             </List>
+          </Slide>
+          <Slide bgColor="secondary">
+            <Image src={contactForm} width="70%" height="70%"/>
           </Slide>
       </Deck>
     );
