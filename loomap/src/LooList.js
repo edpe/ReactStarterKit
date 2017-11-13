@@ -4,7 +4,7 @@ import Loo from './Loo';
 const LooList = (props) => {
   return (
     <ul>
-      {props.loos.map((loo) => (
+      {props.geojson.features.map((loo) => (
           <li key={loo._id}>
             <Loo loo={loo} />
           </li>

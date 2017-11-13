@@ -3,6 +3,7 @@ import React from 'react';
 
 // Import Spectacle Core tags
 import {
+  Code,
   CodePane,
   BlockQuote,
   Cite,
@@ -516,9 +517,145 @@ export default class Presentation extends React.Component {
               <ListItem>Build a <strong style={{ color: "#33B969"}}>Nav</strong> component and render it in <strong style={{ color: "#33B969"}}>App</strong></ListItem>
               <ListItem>Add handler properties to <strong style={{ color: "#33B969"}}>App</strong> to control the state</ListItem>
               <ListItem>Pass the handlers to <strong style={{ color: "#33B969"}}>Nav</strong></ListItem>
-              <ListItem><em>(stretch)</em> Refactor to achieve this with a single handler function</ListItem>
+              <ListItem><em>(stretch)</em> Refactor to achieve this with a single handler method</ListItem>
             </List>
           </Slide>
+          <Slide bgColor="secondary">
+            <Heading size={1} fit textColor="primary">
+              Component Lifecycle
+            </Heading>
+            <Heading size={3} textColor="tertiary">
+              mounting
+            </Heading>
+            <List>
+              <ListItem>
+                <Code textColor="tertiary">constructor()</Code>
+              </ListItem>
+              <Appear>
+                <ListItem>
+                  <Code textColor="tertiary">componentWillMount()</Code>
+                </ListItem>
+              </Appear>
+              <ListItem>
+                <Code textColor="tertiary">render()</Code>
+              </ListItem>
+              <Appear>
+                <ListItem>
+                  <Code textColor="tertiary">componentDidMount()</Code>
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide bgColor="secondary">
+            <Heading size={1} fit textColor="primary">
+              Component Lifecycle
+            </Heading>
+            <Heading size={3} textColor="tertiary">
+              updating
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  <Code textColor="tertiary">componentWillReceiveProps()</Code>
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  <Code textColor="tertiary">shouldComponentUpdate()</Code>
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  <Code textColor="tertiary">componentWillUpdate()</Code>
+                </ListItem>
+              </Appear>
+              <ListItem>
+                <Code textColor="tertiary">render()</Code>
+              </ListItem>
+              <Appear>
+                <ListItem>
+                  <Code textColor="tertiary">componentDidUpdate()</Code>
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide bgColor="secondary">
+            <Heading size={1} fit textColor="primary">
+              Component Lifecycle
+            </Heading>
+            <Heading size={3} textColor="tertiary">
+              unmounting
+            </Heading>
+            <List>
+              <ListItem>
+                <Code textColor="tertiary">componentWillUnmount()</Code>
+              </ListItem>
+            </List>
+          </Slide>
+          <Slide bgColor="secondary">
+            <Heading size={1} fit textColor="primary">
+              Component Lifecycle
+            </Heading>
+            <Heading size={3} textColor="tertiary">
+              error handling
+            </Heading>
+            <List>
+              <ListItem>
+                <Code textColor="tertiary">componentDidCatch()</Code>
+              </ListItem>
+            </List>
+          </Slide>
+          <Slide bgColor="primary">
+            <Heading size={1} fit caps textColor="secondary">
+              Daunting?
+            </Heading>
+            <Heading size={3} fit textColor="tertiary">
+             start with simple rules
+            </Heading>
+            <List>
+              <ListItem>
+                use <Code>constructor()</Code> to initialize state
+              </ListItem>
+              <ListItem>
+                you'll always implement <Code>render()</Code>
+              </ListItem>
+              <ListItem>
+                fetch data in <Code>componentDidMount()</Code>
+              </ListItem>
+              <ListItem>
+                leave the rest for when you need them (Error-handling, Direct DOM manipulation, performance management, etc.)
+              </ListItem>
+            </List>
+          </Slide>
+          <CodeSlide
+            showLineNumbers={sln}
+            transition={[]}
+            lang="js"
+            code={require("./assets/code/componentDidMount.example.js").default}
+            ranges={[
+              { loc: [0, 0], title: "Fetching Data" },
+              { loc: [1, 7], note: "the new 'fetch' API" },
+              { loc: [7, 10], note: "parsing json from the response returns a promise" },
+              { loc: [10, 15], note: "now set the data into state" },
+              { loc: [21, 31], note: "full hipster (look, no semis...)" },
+            ]}/>
+          <Slide>
+            <Heading size={3} textColor="secondary">
+              LooMap
+            </Heading>
+            <Heading size={4} textColor="tertiary">
+              the fetch mission
+            </Heading>
+            <List ordered>
+              <ListItem>Implement <Code>componentDidMount()</Code> in <strong style={{ color: "#33B969"}}>App</strong></ListItem>
+              <ListItem>Fetch data from "https://gbptm-ui.herokuapp.com/loos/near/23.592/46.769"</ListItem>
+              <ListItem>Set it into state</ListItem>
+              <ListItem>Supply it to the components in <Code>render()</Code></ListItem>
+              <ListItem><em>(stretch)</em> Figure out what's going wrong...</ListItem>
+            </List>
+          </Slide>
+          
+
 
 
 
