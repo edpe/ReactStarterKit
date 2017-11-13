@@ -479,9 +479,47 @@ export default class Presentation extends React.Component {
             ranges={[
               { loc: [2, 3], title: "A Stateful Component" },
               { loc: [4, 10] },
-              { loc: [12, 13], note: "Hey, show them the dev tools! (state-demo app)" },
-
+              { loc: [11, 14] },
+              { loc: [11, 14], note: "Hey, show them the dev tools! (state-demo app)" },
             ]}/>
+          <CodeSlide
+            showLineNumbers={sln}
+            transition={[]}
+            lang="js"
+            code={require("./assets/code/AppState.example.js").default}
+            ranges={[
+              { loc: [2, 7], title: "Introducing setState" },
+              { loc: [2, 7], note: "exploit fat arrow's bound scope + babel's class properties" },
+              { loc: [3, 6], note: "setState queues an update to component state"},
+              { loc: [20, 21], note: "setState takes an updater function and a callback"},
+              { loc: [30, 35], note: "updater receives current state and props, returns an object"},
+            ]}/>
+            <CodeSlide
+              showLineNumbers={sln}
+              transition={[]}
+              lang="js"
+              code={require("./assets/code/Nav.example.js").default}
+              ranges={[
+                { loc: [2, 3], title: "Nav.js" },
+                { loc: [4, 14] },
+                { loc: [6, 7], note: "For years this has been a sin..."},
+              ]}/>
+          <Slide>
+            <Heading size={3} textColor="secondary">
+              LooMap
+            </Heading>
+            <Heading size={4} textColor="tertiary">
+              the nav state mission
+            </Heading>
+            <List ordered>
+              <ListItem>Render <strong style={{ color: "#33B969"}}>LooMap</strong> or <strong style={{ color: "#33B969"}}>LooList</strong> in <strong style={{ color: "#33B969"}}>App</strong> respecting state</ListItem>
+              <ListItem>Build a <strong style={{ color: "#33B969"}}>Nav</strong> component and render it in <strong style={{ color: "#33B969"}}>App</strong></ListItem>
+              <ListItem>Add handler properties to <strong style={{ color: "#33B969"}}>App</strong> to control the state</ListItem>
+              <ListItem>Pass the handlers to <strong style={{ color: "#33B969"}}>Nav</strong></ListItem>
+              <ListItem><em>(stretch)</em> Refactor to achieve this with a single handler function</ListItem>
+            </List>
+          </Slide>
+
 
 
 

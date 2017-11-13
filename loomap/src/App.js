@@ -14,28 +14,28 @@ class App extends Component {
     };
   }
 
-  showMap = () => {
-    this.setState({show: 'map'});
+  handleShow = () => {
+    this.setState(() => ({show: 'map'}));
   }
 
   showList = () => {
-    this.setState({show: 'list'});
+    this.setState(() => ({show: 'list'}));
   }
 
   render() {
     return (
       <div>
         <Nav showMap={this.showMap} showList={this.showList}/>
-        {this.state.show === 'list' ?
+        {this.state.show === 'list' ? (
           <LooList loos={data.features} />
-          :
+        ) : (
           <LooMap
             center={[46.76, 23.59]}
             zoom={13}
             geojson={data}
             height="600px"
             />
-        }
+        )}
       </div>
     );
   }
