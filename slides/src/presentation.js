@@ -42,7 +42,7 @@ import paperloo from './assets/img/paperloo.jpg';
 require('normalize.css');
 
 const theme = createTheme();
-const sln = true;
+const sln = false;
 const cursor = { show: true, blink: true, element: "|", hideWhenDone: true, hideWhenDoneDelay: 500 };
 
 
@@ -671,13 +671,6 @@ export default class Presentation extends React.Component {
               <ListItem>The docs at <Link href="https://reactjs.org/">reactjs.org</Link> are increasingly excellent</ListItem>
             </List>
           </Slide>
-
-
-
-
-
-
-
       </Deck>
     );
   }
