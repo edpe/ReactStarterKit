@@ -648,13 +648,30 @@ export default class Presentation extends React.Component {
             </Heading>
             <List ordered>
               <ListItem>Implement <Code>componentDidMount()</Code> in <strong style={{ color: "#33B969"}}>App</strong></ListItem>
-              <ListItem>Fetch data from "https://gbptm-ui.herokuapp.com/loos/near/23.592/46.769"</ListItem>
+              <ListItem>Fetch data from: <br/><Code textSize={26}>https://gbptm-ui.herokuapp.com/loos/near/23.592/46.769</Code></ListItem>
               <ListItem>Set it into state</ListItem>
               <ListItem>Supply it to the components in <Code>render()</Code></ListItem>
               <ListItem><em>(stretch)</em> Figure out what's going wrong...</ListItem>
             </List>
           </Slide>
-          
+          <Slide>
+            <Heading size={3} fit caps textColor="secondary">
+              React Starter Kit
+            </Heading>
+            <Heading size={4} fit textColor="tertiary">
+              recap &amp; closing remarks
+            </Heading>
+            <List>
+              <ListItem>Use create-react-app</ListItem>
+              <ListItem>Think in components</ListItem>
+              <ListItem>Stick to pure components whenever possible</ListItem>
+              <ListItem>Lift state up</ListItem>
+              <ListItem>Enjoy the simplicity afforded by the conceptual model</ListItem>
+              <ListItem>Avoid state management libraries when starting out</ListItem>
+              <ListItem>The docs at <Link href="https://reactjs.org/">reactjs.org</Link> are increasingly excellent</ListItem>
+            </List>
+          </Slide>
+
 
 
 
