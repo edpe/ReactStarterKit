@@ -383,7 +383,7 @@ export default class Presentation extends React.Component {
               the list mission
             </Heading>
             <List ordered>
-              <ListItem>Copy the fixture from <Link href="https://git.io/vFrJv">https://git.io/vFrJv</Link></ListItem>
+              <ListItem>Copy the fixture from <Link href="https://git.io/vbkt7">https://git.io/vbkt7</Link></ListItem>
               <ListItem>Import it in <strong style={{ color: "#33B969"}}>App.js</strong></ListItem>
               <ListItem>Build a <strong style={{ color: "#33B969"}}>Loo</strong> component for displaying individual loos</ListItem>
               <ListItem>Build a <strong style={{ color: "#33B969"}}>LooList</strong> which renders a list of <strong style={{ color: "#33B969"}}>Loo</strong>s </ListItem>
