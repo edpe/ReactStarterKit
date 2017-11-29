@@ -649,7 +649,7 @@ export default class Presentation extends React.Component {
             </Heading>
             <List ordered>
               <ListItem>Implement <Code>componentDidMount()</Code> in <strong style={{ color: "#33B969"}}>App</strong></ListItem>
-              <ListItem>Fetch data from: <br/><Code textSize={26}>https://gbptm-ui.herokuapp.com/loos/near/23.592/46.769</Code></ListItem>
+              <ListItem>Fetch data from: <br/><Code textSize={26}>https://gbptm-ui.herokuapp.com/loos/near/1.2958/52.6335</Code></ListItem>
               <ListItem>Set it into state</ListItem>
               <ListItem>Supply it to the components in <Code>render()</Code></ListItem>
               <ListItem><em>(stretch)</em> Figure out what's going wrong...</ListItem>
