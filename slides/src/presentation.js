@@ -462,7 +462,7 @@ export default class Presentation extends React.Component {
               <ListItem><em>(stretch)</em> Use prop-types to validate the inputs to <strong style={{ color: "#33B969"}}>LooMap</strong></ListItem>
             </List>
             <Heading size={6} fit textColor="secondary">
-              * Put your hand in the air when you make a map of a desert by mistake
+              * Put your hand in the air when you make a map of the Indian Ocean by mistake
             </Heading>
           </Slide>
           <Slide bgColor="primary">
